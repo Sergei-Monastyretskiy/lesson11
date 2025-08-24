@@ -1,0 +1,18 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// Footer
+.footer {
+    background: $color-primary;
+    padding: 46px $gap;
+    color: $color-text-light;
+}
+
+.footer-name {
+    margin-bottom: $gap;
+    font-size: $fs-footer-name;
+
+    @include respond(small) {
+        font-size: 18px;
+    }
+}

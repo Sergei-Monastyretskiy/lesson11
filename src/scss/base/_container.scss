@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+// Container
+.container {
+    width: min(100% - $gap-lg, $container-primary);
+    margin-inline: auto;
+}

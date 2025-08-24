@@ -1,0 +1,38 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// About
+.about-section {
+    background: $color-section-light;
+    text-align: center;
+    padding: $section-padding 20px;
+
+}
+
+/* Было .style-section h2 / p — заменили на два отдельных класса */
+.section-title {
+    font-size: $fs-subtitle;
+    font-weight: $font-weight-medium;
+    margin: 12px 0 43px;
+    color: $color-text;
+
+    @include respond(tablet) {
+        font-size: 26px;
+    }
+
+    @include respond(small) {
+        font-size: 20px;
+    }
+}
+
+.section-text {
+    font-size: $fs-text;
+    line-height: 1.64;
+    color: $color-text-muted;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @include respond(tablet) {
+        font-size: 15px;
+    }
+}

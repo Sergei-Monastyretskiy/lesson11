@@ -1,0 +1,16 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// Video
+.video {
+    padding-bottom: $section-padding;
+    background: $color-bg;
+    margin-top: 56px;
+}
+
+.video-iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+}

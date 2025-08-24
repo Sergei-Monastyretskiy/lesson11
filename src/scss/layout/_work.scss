@@ -1,0 +1,8 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+.work-section {
+    background: $color-section-alt;
+    text-align: center;
+    margin-top: 105px;
+}

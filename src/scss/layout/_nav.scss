@@ -1,0 +1,113 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// Nav
+.nav {
+    &-list {
+        display: flex;
+        list-style: none;
+        gap: $nav-gap;
+        margin-top: 39px;
+        flex-wrap: wrap;
+        line-height: 0.5;
+
+        @include respond(mobile) {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+            background: $color-primary;
+            padding: 20px;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            border-radius: 8px;
+        }
+    }
+
+    &-link {
+        position: relative;
+        font-weight: $font-weight-medium;
+        font-size: $fs-menu;
+        line-height: 164%;
+        letter-spacing: 0.1em;
+        color: $color-text;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color .2s ease-in-out, opacity .2s ease-in-out;
+
+        @include respond(mobile) {
+            color: $color-text-light;
+        }
+
+        &.active {
+            color: $color-accent;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%) scaleX(0);
+            width: 40%;
+            height: 2px;
+            background: $color-accent;
+            border-radius: 1px;
+            transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+            opacity: .8;
+            pointer-events: none;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-accent;
+        }
+
+        &:hover::after,
+        &:focus::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+}
+
+@include respond(mobile) {
+
+    /* Когда чекбокс активен — показываем меню */
+    .nav-toggle:checked~.nav .nav-list {
+        display: flex;
+    }
+
+    /* Бургер */
+    .burger {
+        display: block;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .burger span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: $color-text;
+        border-radius: 2px;
+        margin-bottom: 5px;
+        transition: all .3s ease;
+    }
+
+    /* Анимация крестика */
+    .nav-toggle:checked+label.burger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .nav-toggle:checked+label.burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked+label.burger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}

@@ -1,0 +1,10 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+.copyrait {
+    font-size: $fs-footer-copy;
+
+    @include respond(small) {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,54 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// Stats
+.stat {
+    &-section {
+        background: $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $gap-lg;
+        padding: 105px 20px;
+        flex-wrap: wrap;
+
+        @include respond(tablet) {
+            gap: $gap-lg;
+            padding: 70px 15px;
+        }
+
+        @include respond(mobile) {
+            flex-direction: column;
+            gap: $gap-md;
+            padding: 50px 10px;
+        }
+    }
+
+    &-item {
+        display: flex;
+        gap: $gap;
+        color: $color-text-light;
+
+        &-icon {
+            width: 50px;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    &-number {
+        font-size: $fs-stat-number;
+        font-weight: $font-weight-medium;
+        margin-bottom: 10px;
+    }
+
+    &-label {
+        font-weight: $font-weight-regular;
+    }
+}

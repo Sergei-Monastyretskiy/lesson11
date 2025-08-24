@@ -1,0 +1,61 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+// First screen
+.first-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: $section-padding auto;
+
+    &-title {
+        font-size: $fs-title;
+        font-weight: $font-weight-medium;
+        margin-bottom: 45px;
+
+        @include respond(tablet) {
+            font-size: 36px;
+        }
+
+        @include respond(mobile) {
+            font-size: 28px;
+        }
+
+        @include respond(small) {
+            font-size: 22px;
+        }
+    }
+
+    &-description {
+        font-size: $fs-text;
+        line-height: 1.5;
+        color: $color-text-secondary;
+        margin-bottom: 59px;
+        max-width: 550px;
+
+        @include respond(tablet) {
+            font-size: 15px;
+        }
+
+        @include respond(mobile) {
+            font-size: 14px;
+        }
+    }
+}
+
+.btn {
+    background: $color-accent;
+    color: $color-text-light;
+    padding: 24px 56px;
+    font-size: $fs-menu;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    @include respond(mobile) {
+        padding: 16px 32px;
+        font-size: 14px;
+    }
+}

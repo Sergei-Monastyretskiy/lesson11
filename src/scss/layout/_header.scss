@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+/* Header */
+.header {
+    display: flex;
+    padding: 40px 0;
+    justify-content: flex-start;
+
+    @include respond(mobile) {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
